@@ -25,7 +25,7 @@ const ProductsDetail = () => {
   }, [products, pid]);
 
   if (loading) {
-    return <h1>Loading..</h1>;
+    return <h1 className="loading">Loading..</h1>;
   }
 
   const handleAddcart = () => {
