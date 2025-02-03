@@ -23,11 +23,10 @@ const ProductsDetail = () => {
   useEffect(() => {
     dispatch(productDetail(pid));
   }, [products, pid]);
-
-  if (loading) {
-    return <h1 className="loading">Loading..</h1>;
+  console.log(loading);
+  if (!loading && !selectedProduct) {
+    return <h1 className="not-found">Product not found!</h1>;
   }
-
   const handleAddcart = () => {
     dispatch(addTocart(selectedProduct));
     toast.success("Product Added to cart successfully!", {
@@ -70,7 +69,7 @@ const ProductsDetail = () => {
                 <div className="stars">
                   <span>{selectedProduct.rating.rate}</span>
                   <div>
-                    {Array.from({ length: 5 }, (_, idx, arr) => {
+                    {Array.from({ length: 5 }, (_, idx) => {
                       if (idx < Math.floor(selectedProduct.rating.rate)) {
                         return <FaStar key={idx} color="gold" />;
                       } else if (

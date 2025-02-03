@@ -6,6 +6,8 @@ import Cart from "./components/Cart";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import Navbar from "./components/Navbar";
+import Thankyou from "./components/Thankyou";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
           <Route path="/" Component={ProductList} />
           <Route path="/details/:pid" Component={ProductsDetail} />
           <Route path="/cart" Component={Cart} />
+          <Route path="/checkout" Component={Thankyou} />
+          <Route path="*" Component={NotFound} />
         </Route>
       </Routes>
       <ToastContainer />

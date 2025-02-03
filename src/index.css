@@ -303,6 +303,7 @@ button:disabled {
 .not-found {
     text-align: center;
     color: #4b4b4b;
+    margin: 20px 0;
 }
 
 .not-found a {
@@ -331,6 +332,7 @@ button:disabled {
 
 table {
     border-collapse: collapse;
+    width: 100%;
 }
 
 table thead tr th,
@@ -352,8 +354,18 @@ table tfoot tr td:last-child {
     color: rgb(17, 68, 110);
 }
 
-@media screen and (max-width:980px) {
+.order-container {
+    width: 100vw;
+    text-align: center;
+    margin: 20px 0;
+}
 
+.order-container h2 {
+    margin-bottom: 10px;
+    color: #4b4b4b;
+}
+
+@media screen and (max-width:980px) {
 
     .detail-container {
         height: max-content;
@@ -389,6 +401,10 @@ table tfoot tr td:last-child {
 
     .checkout-container .checkout-detail table {
         flex-basis: 100%;
+    }
+
+    table {
+        width: 100%;
     }
 }
 

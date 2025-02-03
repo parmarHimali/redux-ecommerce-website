@@ -46,7 +46,7 @@ const ProductList = () => {
           </div>
           <div className="product-container">
             {filteredProducts.length === 0 ? (
-              <h2>No products found!</h2>
+              <h2 className="not-found">No products found!</h2>
             ) : (
               filteredProducts.map((product) => {
                 return (
@@ -58,8 +58,7 @@ const ProductList = () => {
                     <img src={product.image} alt="" />
                     <div>{product.title}</div>
                     <div className="product-price">
-                      <h4>Price: ${product.price}</h4>
-                      {/* <Link to={`/details/${product.id}`}>More Details</Link> */}
+                      <h3>${product.price}</h3>
                     </div>
                   </div>
                 );
