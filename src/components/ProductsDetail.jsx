@@ -23,7 +23,6 @@ const ProductsDetail = () => {
   useEffect(() => {
     dispatch(productDetail(pid));
   }, [products, pid]);
-  console.log(loading);
   if (!loading && !selectedProduct) {
     return <h1 className="not-found">Product not found!</h1>;
   }
