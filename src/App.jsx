@@ -21,7 +21,7 @@ const App = () => {
           <Route path="*" Component={NotFound} />
         </Route>
       </Routes>
-      <ToastContainer />
+      <ToastContainer position="top-center" autoClose={2000} limit={1} />
     </>
   );
 };

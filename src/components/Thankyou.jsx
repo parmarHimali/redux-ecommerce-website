@@ -14,6 +14,9 @@ const Thankyou = () => {
     }
     dispatch(emptyCart());
   }, []);
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartData));
+  }, [cartData]);
   return (
     <>
       <div className="order-container">

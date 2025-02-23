@@ -11,8 +11,11 @@ const ProductList = () => {
   const navigateTo = useNavigate();
 
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, []);
+    if (products.length == 0) {
+      dispatch(fetchProducts());
+    }
+  }, [products.length, dispatch]);
+
   useEffect(() => {
     setFilteredProducts(products);
   }, [products]);
@@ -29,6 +32,9 @@ const ProductList = () => {
       )
     );
   };
+  if (error) {
+    return <h1>{error}</h1>;
+  }
   return (
     <>
       {loading ? (
